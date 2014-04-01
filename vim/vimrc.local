@@ -1,0 +1,19 @@
+"UnBundle 'myusuf3/numbers.vim'
+color molokai
+set ts=4
+set expandtab
+set shiftwidth=4
+set nospell
+au BufNewFile,BufRead,BufEnter *.tex setlocal spell spelllang=en_IE
+au BufNewFile,BufRead,BufEnter *.md setlocal spell spelllang=en_IE
+"au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_IE
+set nofoldenable                " disable code folding
+"let g:DisableAutoPHPFolding = 1 " disable PIV's folding
+let g:indent_guides_enable_on_vim_startup = 0
+au BufNewFile,BufRead,BufEnter *.m3p set filetype=modula3
+au BufNewFile,BufRead,BufEnter *.i3 set filetype=modula3
+au BufNewFile,BufRead,BufEnter *.alph set filetype=javascript
+au BufNewFile,BufRead,BufEnter *.jl set filetype=julia
+set timeoutlen=0
+Bundle 'JuliaLang/julia-vim'
+set clipboard=unnamedplus
