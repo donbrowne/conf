@@ -1,0 +1,75 @@
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+function cd () {
+    builtin cd "$@" && ls --color
+}
+
+export BROWSER='elinks'
+
+#
+# Editors
+#
+
+export TERM="xterm-256color"
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+
+#
+# Language
+#
+
+export LANG='en_IE.UTF-8'
+
+#
+# Paths
+#
+
+typeset -gU cdpath fpath mailpath path
+
+# Set the the list of directories that cd searches.
+# cdpath=(
+#   $cdpath
+# )
+
+# Set the list of directories that Zsh searches for programs.
+path=(
+  /usr/local/{bin,sbin,games}
+  /usr/games
+  /sbin
+  /usr/bin
+  $path
+)
+
+#
+# Less
+#
+
+# Set the default Less options.
+# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
+# Remove -X and -F (exit if the content fits on one screen) to enable it.
+export LESS='-g -i -M -S -w -X -z-4'
+# Set the Less input preprocessor.
+if (( $+commands[lesspipe.sh] )); then
+  export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
+fi
+
+#
+# Temporary Files
+#
+
+if [[ ! -d "$TMPDIR" ]]; then
+  export TMPDIR="/tmp/$USER"
+  mkdir -p -m 700 "$TMPDIR"
+fi
+
+TMPPREFIX="${TMPDIR%/}/zsh"
+if [[ ! -d "$TMPPREFIX" ]]; then
+  mkdir -p "$TMPPREFIX"
+fi
+
