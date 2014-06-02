@@ -1,0 +1,63 @@
+set encoding=utf-8
+set nocompatible
+set background=dark
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'tomasr/molokai'
+Plugin 'sickill/vim-monokai'
+Plugin 'bling/vim-airline'
+Plugin 'tmhedberg/matchit'
+
+call vundle#end()
+
+filetype plugin indent on	
+set expandtab
+set ts=4
+set sw=4
+set softtabstop=4
+set shiftround
+
+set number
+set cursorline
+syntax enable
+"au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_ie
+set showmode
+set backspace=indent,eol,start
+set incsearch
+set hlsearch
+set autoread
+set history=1000
+set tabpagemax=50
+set t_Co=16
+set viminfo^=!
+set nobackup
+set noswapfile
+set nowb
+set title
+set novisualbell
+set noerrorbells
+set showcmd
+set wildmenu
+set wildmode=longest,full
+set tw=80
+set t_vb=
+set lazyredraw
+let mapleader=","
+let g:mapleader=","
+nmap <leader>w :w!<cr>
+nnoremap <silent> ,/ :nohlsearch<CR>
+set mouse=a
+set ttyfast
+set ignorecase
+set magic
+set cm=blowfish
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+colorscheme monokai 
