@@ -67,10 +67,12 @@ set ignorecase
 set magic
 set cm=blowfish
 set nofoldenable
+set splitright
+set splitbelow
 
 "Highlight spaces, tabs, etc
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 set timeoutlen=0
 "Integrate with OS clipboard
