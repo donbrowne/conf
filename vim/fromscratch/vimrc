@@ -11,9 +11,9 @@ Plugin 'tpope/vim-sensible'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
-Plugin 'spf13/vim-colors'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'tomasr/molokai'
 
 call vundle#end()
 
@@ -78,3 +78,4 @@ nmap <leader>w :w!<cr>
 nnoremap <silent> ,/ :nohlsearch<CR>
 colorscheme molokai
 colors molokai
+let g:airline_theme='powerlineish'
