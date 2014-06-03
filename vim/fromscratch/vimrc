@@ -38,6 +38,8 @@ set backspace=indent,eol,start
 set autoread
 set viminfo^=!
 
+"set ruler                   " Show the ruler
+"set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 "Search options, do incremental search and highlight results
 set incsearch
 set hlsearch
@@ -57,12 +59,14 @@ set t_Co=256
 set wildmenu
 set wildmode=longest,full
 
-set lazyredraw
+"Note: Lazyredraw and airline do not work well together
+"set lazyredraw
 set mouse=a
 set ttyfast
 set ignorecase
 set magic
 set cm=blowfish
+set nofoldenable
 
 "Highlight spaces, tabs, etc
 set list
@@ -79,3 +83,4 @@ nnoremap <silent> ,/ :nohlsearch<CR>
 colorscheme molokai
 colors molokai
 let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts=1
