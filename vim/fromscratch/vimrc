@@ -9,55 +9,72 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'tomasr/molokai'
-Plugin 'sickill/vim-monokai'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
+Plugin 'spf13/vim-colors'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 
-filetype plugin indent on	
+filetype plugin indent on
 set expandtab
 set ts=4
 set sw=4
 set softtabstop=4
 set shiftround
+set tw=80
+set t_vb=
+set history=1000
+set tabpagemax=50
 
 set number
 set cursorline
 syntax enable
 "au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_ie
 set showmode
+set showcmd
 set backspace=indent,eol,start
+set autoread
+set viminfo^=!
+
+"Search options, do incremental search and highlight results
 set incsearch
 set hlsearch
-set autoread
-set history=1000
-set tabpagemax=50
-set t_Co=16
-set viminfo^=!
+
+"Get rid of swap files
 set nobackup
 set noswapfile
 set nowb
+
+"Terminal stuff, set window title, disable any bells, turn on ALL the colours
 set title
 set novisualbell
 set noerrorbells
-set showcmd
+set t_Co=256
+
+"Command auto-complete menu
 set wildmenu
 set wildmode=longest,full
-set tw=80
-set t_vb=
+
 set lazyredraw
-let mapleader=","
-let g:mapleader=","
-nmap <leader>w :w!<cr>
-nnoremap <silent> ,/ :nohlsearch<CR>
 set mouse=a
 set ttyfast
 set ignorecase
 set magic
 set cm=blowfish
+
+"Highlight spaces, tabs, etc
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-colorscheme monokai 
+set timeoutlen=0
+"Integrate with OS clipboard
+set clipboard=unnamedplus
+
+let mapleader=","
+let g:mapleader=","
+nmap <leader>w :w!<cr>
+nnoremap <silent> ,/ :nohlsearch<CR>
+colorscheme molokai
+colors molokai
