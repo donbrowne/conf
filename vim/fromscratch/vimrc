@@ -1,3 +1,9 @@
+"A vimrc from scratch, which contains bits of different people's configs,
+"plus bits of spf-13 that I like. In time I will probably split it out into
+"two files
+"
+"The config assumes that you are running Vim 7.4 (or a recent-ish version of
+"7.3) on Linux in a terminal, this may well break things in other environments
 set encoding=utf-8
 set nocompatible
 set background=dark
@@ -7,12 +13,9 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-sensible'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasr/molokai'
 
 call vundle#end()
@@ -38,8 +41,6 @@ set backspace=indent,eol,start
 set autoread
 set viminfo^=!
 
-"set ruler                   " Show the ruler
-"set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 "Search options, do incremental search and highlight results
 set incsearch
 set hlsearch
@@ -82,7 +83,11 @@ let mapleader=","
 let g:mapleader=","
 nmap <leader>w :w!<cr>
 nnoremap <silent> ,/ :nohlsearch<CR>
+
+"Ooh, pretty colours...
 colorscheme molokai
 colors molokai
+
+"Powerline settings
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=1
