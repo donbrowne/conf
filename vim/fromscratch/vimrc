@@ -34,6 +34,7 @@ set tabpagemax=50
 
 set number
 set cursorline
+set laststatus=2
 syntax enable
 "au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_ie
 set showmode
