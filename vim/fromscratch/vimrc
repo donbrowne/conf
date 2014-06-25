@@ -25,6 +25,7 @@ Plugin 'tomasr/molokai'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
