@@ -1,9 +1,11 @@
 "A vimrc from scratch, which contains bits of different people's configs,
 "plus bits of spf-13 that I like. In time I will probably split it out into
-"two files
+"multiple files
 "
 "The config assumes that you are running Vim 7.4 (or a recent-ish version of
-"7.3) on Linux in a terminal, this may well break things in other environments
+"7.3) on Linux in a terminal, this will probably break things in other 
+"environments
+
 set encoding=utf-8
 set nocompatible
 set background=dark
@@ -12,16 +14,17 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
+"Map leader key to comma
 let mapleader=","
 let g:mapleader=","
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomasr/molokai'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -41,9 +44,11 @@ set cursorline
 set laststatus=2
 syntax enable
 "au BufNewFile,BufRead,BufEnter *.txt setlocal spell spelllang=en_ie
+"Show the current mode and command in the status bar
 set showmode
 set showcmd
 set backspace=indent,eol,start
+"Auto reload file if it has been changed elsewhere
 set autoread
 set viminfo^=!
 
@@ -68,12 +73,18 @@ set wildmode=longest,full
 
 "Note: Lazyredraw and airline do not work well together
 "set lazyredraw
+"Turn on mouse integration
 set mouse=a
 set ttyfast
+"Case insensitive searching
 set ignorecase
+"Regex magic
 set magic
+"Use blowfish for encryption
 set cm=blowfish
 set nofoldenable
+
+"`vsplit` to the right, `split` new windows below the current one
 set splitright
 set splitbelow
 
@@ -83,6 +94,7 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 set timeoutlen=1000
 set ttimeoutlen=0
+
 "Integrate with OS clipboard
 set clipboard=unnamedplus
 
