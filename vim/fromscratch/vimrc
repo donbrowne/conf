@@ -12,12 +12,16 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
+let mapleader=","
+let g:mapleader=","
+
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomasr/molokai'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Lokaltog/vim-easymotion'
 
 call vundle#end()
 
@@ -77,12 +81,11 @@ set splitbelow
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
-set timeoutlen=0
+set timeoutlen=1000
+set ttimeoutlen=0
 "Integrate with OS clipboard
 set clipboard=unnamedplus
 
-let mapleader=","
-let g:mapleader=","
 nmap <leader>w :w!<cr>
 nnoremap <silent> ,/ :nohlsearch<CR>
 
