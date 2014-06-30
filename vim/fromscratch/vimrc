@@ -26,6 +26,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
+Bundle 'JuliaLang/julia-vim'
 
 call vundle#end()
 
