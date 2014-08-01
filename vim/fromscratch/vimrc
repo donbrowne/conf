@@ -23,9 +23,9 @@ Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomasr/molokai'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/vimshell.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
@@ -113,3 +113,6 @@ colors molokai
 "Powerline settings
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=1
+
+"Use vimfiler as the default browser
+let g:vimfiler_as_default_explorer=1
