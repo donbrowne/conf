@@ -22,7 +22,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomasr/molokai'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
@@ -71,7 +74,7 @@ set t_Co=256
 
 "Command auto-complete menu
 set wildmenu
-set wildmode=longest,full
+set wildmode=longest:list,full
 
 "Note: Lazyredraw and airline do not work well together
 "set lazyredraw
