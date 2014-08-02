@@ -33,6 +33,10 @@ Bundle 'JuliaLang/julia-vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'rking/ag.vim'
+Bundle 'greyblake/vim-preview'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'klen/python-mode'
 
 call vundle#end()
 
