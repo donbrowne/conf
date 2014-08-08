@@ -130,3 +130,14 @@ let g:pymode_rope_completion = 0
 "Close YCM's preview window automatically
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_collect_identifiers_from_tags_files=1
+
+"An amusing experiment in masochism
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
