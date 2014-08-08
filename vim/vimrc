@@ -22,7 +22,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tmhedberg/matchit'
 Plugin 'tomasr/molokai'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/vimproc.vim'
@@ -123,3 +123,10 @@ let g:airline_powerline_fonts=1
 
 "Use vimfiler as the default browser
 let g:vimfiler_as_default_explorer=1
+
+"Turn off python-mode's completer so it doesn't conflict with YCM
+let g:pymode_rope_completion = 0
+
+"Close YCM's preview window automatically
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
