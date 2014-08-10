@@ -32,10 +32,9 @@ Plugin 'tpope/vim-fugitive'
 Bundle 'JuliaLang/julia-vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'sheerun/vim-polyglot'
-Bundle 'rking/ag.vim'
-Bundle 'greyblake/vim-preview'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'scrooloose/nerdcommenter'
+"Bundle 'greyblake/vim-preview'
+"Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'scrooloose/nerdcommenter'
 
 call vundle#end()
 
@@ -113,6 +112,8 @@ nmap <leader>w :w!<cr>
 nnoremap <silent> ,/ :nohlsearch<CR>
 
 "Ooh, pretty colours...
+let g:molokai_original = 1
+let g:rehash256 = 1
 colorscheme molokai
 colors molokai
 
@@ -122,9 +123,6 @@ let g:airline_powerline_fonts=1
 
 "Use vimfiler as the default browser
 let g:vimfiler_as_default_explorer=1
-
-"Turn off python-mode's completer so it doesn't conflict with YCM
-let g:pymode_rope_completion = 0
 
 "Close YCM's preview window automatically
 let g:ycm_autoclose_preview_window_after_insertion = 1
