@@ -6,9 +6,8 @@
 "7.3) on Linux in a terminal, this will probably break things in other 
 "environments
 
-set encoding=utf-8
 set nocompatible
-set background=dark
+set encoding=utf-8
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -29,12 +28,13 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Bundle 'JuliaLang/julia-vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'sheerun/vim-polyglot'
-"Bundle 'greyblake/vim-preview'
-"Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'scrooloose/nerdcommenter'
+Plugin 'JuliaLang/julia-vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'sheerun/vim-polyglot'
+"Plugin 'greyblake/vim-preview'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'scrooloose/nerdcommenter'
+"Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
@@ -109,9 +109,10 @@ set ttimeoutlen=0
 set clipboard=unnamedplus
 
 nmap <leader>w :w!<cr>
-nnoremap <silent> ,/ :nohlsearch<CR>
+nmap <leader>q :q!<cr>
 
 "Ooh, pretty colours...
+set background=dark
 let g:molokai_original = 1
 let g:rehash256 = 1
 colorscheme molokai
