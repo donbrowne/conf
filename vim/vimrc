@@ -127,10 +127,17 @@ let g:airline_powerline_fonts=1
 let g:vimfiler_as_default_explorer=1
 map <C-e> :VimFilerExplorer -force-quit<cr>
 
+"Unite settings
+"Using ag as recursive command.
+let g:unite_source_rec_async_command =
+    \ 'ag --follow --nocolor --nogroup --hidden -g ""'
+map <C-f> :Unite -start-insert file:.<cr>
+map <C-p> :Unite grep<cr>
+map <leader>s :Unite -quick-match buffer<cr>
+
 "Close YCM's preview window automatically
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_collect_identifiers_from_tags_files=1
 
 "An amusing experiment in masochism
 inoremap  <Up>     <NOP>
