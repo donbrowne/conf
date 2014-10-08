@@ -2,9 +2,9 @@
 "plus bits of spf-13 that I like. In time I will probably split it out into
 "multiple files
 "
-"The config assumes that you are running Vim 7.4 (or a recent-ish version of
-"7.3) on Linux in a terminal, this will probably break things in other 
-"environments
+"This config is for the terminal Vim only, and requires at least Vim 7.4.399
+"It works for both OS X and Linux although there are some differences between
+"the two platforms
 
 set nocompatible
 set encoding=utf-8
@@ -91,7 +91,7 @@ set ignorecase
 "Regex magic
 set magic
 "Use blowfish for encryption
-set cm=blowfish
+set cm=blowfish2
 set nofoldenable
 
 "`vsplit` to the right, `split` new windows below the current one
@@ -106,7 +106,12 @@ set timeoutlen=1000
 set ttimeoutlen=0
 
 "Integrate with OS clipboard
-set clipboard=unnamedplus
+"Had problems with unnamedplus under OS X, so use unnamed there instead
+if has("macunix")
+    set clipboard=unnamed
+elseif has("unix")
+    set clipboard=unnamedplus
+endif
 
 "Need to run 'stty -ixon' for this to work
 nmap <C-q> :q<cr>
@@ -120,8 +125,13 @@ colorscheme molokai
 colors molokai
 
 "Powerline settings
+"TODO: Figure out how to get the patched fonts working under OS X
 let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts=1
+if has("macunix")
+  let g:airline_powerline_fonts=0
+elseif has("unix")
+  let g:airline_powerline_fonts=1
+endif
 
 "Use vimfiler as the default browser, map <C-e> to side browser
 let g:vimfiler_as_default_explorer=1
