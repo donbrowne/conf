@@ -32,8 +32,7 @@ Plugin 'JuliaLang/julia-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'sheerun/vim-polyglot'
 "Plugin 'greyblake/vim-preview'
-"Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'tpope/vim-surround'
 
 call vundle#end()
@@ -158,6 +157,10 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+"Go away ex mode
+inoremap Q <NOP>
+noremap Q <NOP>
 
 "EasyMotion mappings
 map <Leader>l <Plug>(easymotion-lineforward)
