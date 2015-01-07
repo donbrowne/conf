@@ -1,0 +1,5 @@
+(setq-default dotspacemacs-configuration-layers
+    '(python html javascript clojure scala haskell git)
+)
+(global-linum-mode)
+(spacemacs/set-font "Monaco" 13)
