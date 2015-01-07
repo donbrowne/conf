@@ -31,9 +31,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'sheerun/vim-polyglot'
-"Plugin 'greyblake/vim-preview'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'zah/nimrod.vim'
+"Plugin 'vim-scripts/hexman.vim'
 "Plugin 'tpope/vim-surround'
+"Plugin 'greyblake/vim-preview'
 
 call vundle#end()
 
@@ -159,7 +161,6 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 "Go away ex mode
-inoremap Q <NOP>
 noremap Q <NOP>
 
 "EasyMotion mappings
