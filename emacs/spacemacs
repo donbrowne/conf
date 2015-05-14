@@ -1,5 +1,17 @@
 (setq-default dotspacemacs-configuration-layers
-    '(python html javascript clojure scala haskell git)
+    '(python html javascript clojure scala git)
 )
 (global-linum-mode)
-(spacemacs/set-font "Monaco" 13)
+
+(setq-default
+  dotspacemacs-default-font '("Monaco"
+                              :size 13
+                              :weight normal
+                              :width normal
+                              :powerline-offset 2)
+)
+
+
+(setq-default dotspacemacs-excluded-packages '(smartparens))
+(setq ace-jump-word-mode-use-query-char nil)
+(defun dotspacemacs/config () (setq powerline-default-separator 'alternate))
