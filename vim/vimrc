@@ -49,6 +49,8 @@ set cc=80
 set t_vb=
 set history=1000
 set tabpagemax=50
+"Change indentation for coffeescript files
+autocmd Filetype coffee setlocal ts=2 sts=2 sw=2
 
 set number
 set cursorline
@@ -113,10 +115,6 @@ if has("macunix")
 elseif has("unix")
     set clipboard=unnamedplus
 endif
-
-"Need to run 'stty -ixon' for this to work
-nmap <C-q> :q<cr>
-nmap <C-s> :w<cr>
 
 "Pretty colours...
 set background=dark
