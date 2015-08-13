@@ -1,9 +1,22 @@
 (setq-default dotspacemacs-configuration-layers
-    '(python html javascript clojure scala git)
+    '(python
+      html
+      javascript
+      clojure
+      scala
+      git
+      ruby
+      rust
+      auto-completion
+      irony-mode
+      c-c++
+      elixir
+    )
 )
 (global-linum-mode)
 
 (setq-default
+  dotspacemacs-startup-banner 'doge
   dotspacemacs-default-font '("Monaco"
                               :size 13
                               :weight normal
@@ -15,3 +28,28 @@
 (setq-default dotspacemacs-excluded-packages '(smartparens))
 (setq ace-jump-word-mode-use-query-char nil)
 (defun dotspacemacs/config () (setq powerline-default-separator 'alternate))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ahs-case-fold-search nil)
+ '(ahs-default-range (quote ahs-range-whole-buffer))
+ '(ahs-idle-interval 0.25)
+ '(ahs-idle-timer 0 t)
+ '(ahs-inhibit-face-list nil)
+ '(coffee-tab-width 2)
+ '(company-minimum-prefix-length 1)
+ '(ring-bell-function (quote ignore) t))
+(defun dotspacemacs/init ()
+  (setq-default ruby-version-manager 'rvm)
+  (setq-default ruby-enable-ruby-on-rails-support t)
+  (setq company-minimum-prefix-length 1)
+)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
