@@ -172,3 +172,8 @@ map <Leader>f <Plug>(easymotion-f)
 
 " keep cursor colum when JK motion
 let g:EasyMotion_startofline = 0
+
+" Use local POSIX-ey shell if fish is used
+if $SHELL =~ 'fish'
+    set shell=/bin/sh
+endif
