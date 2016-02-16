@@ -124,13 +124,8 @@ colorscheme molokai
 colors molokai
 
 "Powerline settings
-"TODO: Figure out how to get the patched fonts working under OS X
 let g:airline_theme='powerlineish'
-if has("macunix")
-  let g:airline_powerline_fonts=0
-elseif has("unix")
-  let g:airline_powerline_fonts=1
-endif
+let g:airline_powerline_fonts=1
 
 "Use vimfiler as the default browser, map <C-e> to side browser
 let g:vimfiler_as_default_explorer=1
