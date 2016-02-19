@@ -5,18 +5,23 @@
       clojure
       scala
       git
+      version-control
       ruby
       rust
       auto-completion
       irony-mode
       c-c++
       elixir
+      erlang
+      syntax-checking
+      yaml
+      go
+      latex
     )
 )
 (global-linum-mode)
 
 (setq-default
-  dotspacemacs-startup-banner 'doge
   dotspacemacs-default-font '("Monaco"
                               :size 13
                               :weight normal
@@ -25,9 +30,22 @@
 )
 
 
-(setq-default dotspacemacs-excluded-packages '(smartparens))
+(defun dotspacemacs/layers ()
+  (setq-default dotspacemacs-excluded-packages '(graphviz-dot-mode))
+)
+
+(defun dotspacemacs/config ()
+  (use-package graphviz-dot-mode)
+)
+
 (setq ace-jump-word-mode-use-query-char nil)
-(defun dotspacemacs/config () (setq powerline-default-separator 'alternate))
+(defun dotspacemacs/config () (setq powerline-default-separator 'alternate) (server-start) (global-company-mode))
+(defun dotspacemacs/user-config ()
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+)
+
+(setq-default dotspacemacs-additional-packages '())
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -38,18 +56,29 @@
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(coffee-tab-width 2)
  '(company-minimum-prefix-length 1)
+ '(custom-safe-themes
+   (quote
+    ("a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "11636897679ca534f0dec6f5e3cb12f28bf217a527755f6b9e744bd240ed47e1" "19352d62ea0395879be564fc36bc0b4780d9768a964d26dfae8aad218062858d" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(ring-bell-function (quote ignore) t))
 (defun dotspacemacs/init ()
   (setq-default ruby-version-manager 'rvm)
   (setq-default ruby-enable-ruby-on-rails-support t)
   (setq company-minimum-prefix-length 1)
 )
+
+(defun dotspacemacs/user-init ()
+  (setq-default fci-rule-column 80)
+)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:background "#1B1D1E" :foreground "#F8F8F2"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
